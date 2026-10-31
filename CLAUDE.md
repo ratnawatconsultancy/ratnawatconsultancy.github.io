@@ -1,7 +1,7 @@
 # Ratnawat Consultancy website: rules for working on this repo
 
-One-page website for **Ratnawat Consultancy**, an insurance agency run by Naresh Ratnawat at
-Shop No. 4, Deepankar Society, Prabhadevi West, Mumbai. It is served by GitHub Pages straight from
+One-page website for **Ratnawat Consultancy**, an insurance agency run by Naresh Shantilal Jain at
+Shop No. 4, Dipankar Society, Prabhadevi West, Mumbai. It is served by GitHub Pages straight from
 the `main` branch, from the repository root. Pushing to `main` publishes the site in about a minute.
 
 The live address is whatever `<link rel="canonical">` in `index.html` says. The owner's Google Business Profile
