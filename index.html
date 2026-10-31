@@ -1,0 +1,537 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ratnawat Consultancy</title>
+<meta name="description" content="Insurance agency in Prabhadevi West, Mumbai. Every kind of insurance, from car, health and life to home and shop, with New India Assurance, LIC, Star Health and Care Health.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Ratnawat Consultancy">
+<meta property="og:description" content="Insurance agency in Prabhadevi West, Mumbai. Every kind of insurance, from car, health and life to home and shop, with New India Assurance, LIC, Star Health and Care Health.">
+<meta property="og:locale" content="en_IN">
+<meta property="og:url" content="https://wtfmangs.github.io/ratnawat-consultancy/">
+<link rel="canonical" href="https://wtfmangs.github.io/ratnawat-consultancy/">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "InsuranceAgency", "name": "Ratnawat Consultancy", "url": "https://wtfmangs.github.io/ratnawat-consultancy/", "description": "Insurance agency for New India Assurance, LIC, Star Health and Care Health, with renewal reminders and claim help.", "telephone": "+91-98203-86440", "address": {"@type": "PostalAddress", "streetAddress": "Shop No. 4, Deepankar Society, S. L. Matkar Marg, opp. Orbit Tower, Prabhadevi West", "addressLocality": "Mumbai", "addressRegion": "Maharashtra", "postalCode": "400025", "addressCountry": "IN"}, "areaServed": "Mumbai", "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "11:00", "closes": "22:00"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Saturday", "Sunday"], "opens": "11:00", "closes": "20:00"}]}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Figtree:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: neighbourhood-office landing page. Hero pairs the promise with a policy-schedule card
+   stamped in office-rubber-stamp violet; marigold marks anything "due". One column below. */
+:root {
+  --paper: #f5f6fa;
+  --card: #ffffff;
+  --ink: #1d1a2e;
+  --ink-soft: #5a5670;
+  --line: #dddbe8;
+  --stamp: #4a3aa6;
+  --stamp-soft: #ecebf8;
+  --marigold: #8f5c00;
+  --marigold-soft: #fbf1dc;
+  --ok: #1f7a4d;
+  --err: #b42318;
+  --font-display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --font-body: "Figtree", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --step--1: 0.8125rem;
+  --step-0: 1rem;
+  --step-1: 1.1875rem;
+  --step-2: 1.5rem;
+  --step-3: clamp(1.75rem, 1.3rem + 2vw, 2.4rem);
+  --step-4: clamp(2.2rem, 1.4rem + 3.6vw, 3.6rem);
+  --radius: 10px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #14121d; --card: #1d1a2a; --ink: #eceaf6; --ink-soft: #aaa6c0; --line: #33304a;
+    --stamp: #a99cff; --stamp-soft: #262142; --marigold: #f0b43c; --marigold-soft: #2e2512;
+    --ok: #5fd39a; --err: #ff8a7a; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #14121d; --card: #1d1a2a; --ink: #eceaf6; --ink-soft: #aaa6c0; --line: #33304a;
+  --stamp: #a99cff; --stamp-soft: #262142; --marigold: #f0b43c; --marigold-soft: #2e2512;
+  --ok: #5fd39a; --err: #ff8a7a; color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body {
+  background: var(--paper); color: var(--ink);
+  font: 400 var(--step-0)/1.6 var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--stamp); text-underline-offset: 3px; }
+:focus-visible { outline: 3px solid var(--stamp); outline-offset: 2px; border-radius: 4px; }
+.wrap {
+  max-width: 1080px; margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+h1, h2, h3 { font-family: var(--font-display); text-wrap: balance; margin: 0; letter-spacing: -0.01em; }
+h2 { font-size: var(--step-3); font-weight: 700; line-height: 1.15; }
+h3 { font-size: var(--step-1); font-weight: 650; line-height: 1.25; }
+p { margin: 0; }
+.eyebrow {
+  font: 500 var(--step--1)/1.3 var(--font-mono); text-transform: uppercase; letter-spacing: 0.08em;
+  color: var(--ink-soft);
+}
+.lede { color: var(--ink-soft); font-size: var(--step-1); max-width: 34em; }
+
+/* Header */
+.top { border-bottom: 1px solid var(--line); background: var(--paper); }
+.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 14px; flex-wrap: wrap; }
+.brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--ink); }
+.brand img { height: 56px; width: auto; flex: none; display: block; }
+.brand .brand-text { display: flex; flex-direction: column; }
+.brand b { font: 700 1.2rem/1.1 var(--font-display); letter-spacing: -0.01em; }
+.brand .brand-text > span { font: 400 0.75rem/1.3 var(--font-mono); color: var(--ink-soft); }
+.top nav { display: flex; gap: 18px; flex-wrap: wrap; font-weight: 500; }
+.top nav a { color: var(--ink); text-decoration: none; }
+.top nav a:hover { color: var(--stamp); }
+
+/* Buttons */
+.btns { display: flex; gap: 12px; flex-wrap: wrap; }
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  min-height: 48px; padding: 0 22px; border-radius: 999px; border: 2px solid var(--stamp);
+  font: 600 var(--step-0)/1 var(--font-body); text-decoration: none; cursor: pointer;
+  background: var(--stamp); color: var(--card);
+}
+.btn:hover { filter: brightness(1.08); }
+.btn.ghost { background: transparent; color: var(--stamp); }
+.btn svg { width: 20px; height: 20px; flex: none; }
+
+/* Hero */
+.hero .wrap { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr); gap: 48px; align-items: center; padding-block: 56px 64px; }
+.hero h1 { font-size: var(--step-4); font-weight: 800; line-height: 1.02; letter-spacing: -0.025em; }
+.hero h1 em { font-style: normal; color: var(--stamp); }
+.hero .copy { display: flex; flex-direction: column; gap: 22px; min-width: 0; }
+.phone-line { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; font: 500 var(--step-0)/1.4 var(--font-mono); color: var(--ink-soft); }
+.phone-line strong { color: var(--ink); font-weight: 500; user-select: all; }
+.copybtn {
+  font: 500 var(--step--1)/1 var(--font-body); min-height: 40px; padding: 8px 12px; border-radius: 6px;
+  border: 1px solid var(--line); background: var(--card); color: var(--ink); cursor: pointer;
+}
+
+/* Policy schedule card */
+.schedule {
+  position: relative; background: var(--card); border: 1px solid var(--line); border-radius: var(--radius);
+  margin: 0; padding: 22px 22px 22px; box-shadow: 0 1px 0 var(--line), 0 18px 40px -24px rgba(29, 26, 46, 0.35);
+  font-family: var(--font-mono); font-size: 0.875rem; min-width: 0;
+}
+.schedule .head { display: flex; justify-content: space-between; gap: 12px; border-bottom: 1px dashed var(--line); padding-bottom: 12px; margin-bottom: 12px; }
+.schedule .head b { font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; font-size: 0.75rem; }
+.schedule .head span { color: var(--ink-soft); font-size: 0.75rem; }
+.schedule dl { display: grid; grid-template-columns: auto 1fr; gap: 8px 16px; margin: 0; }
+.schedule dt { color: var(--ink-soft); }
+.schedule dd { margin: 0; font-variant-numeric: tabular-nums; }
+.schedule dd.due { color: var(--marigold); font-weight: 500; }
+.days { display: flex; gap: 6px; flex-wrap: wrap; }
+.days span { padding: 2px 8px; border-radius: 999px; background: var(--marigold-soft); color: var(--marigold); font-weight: 500; }
+.stamp {
+  position: relative; display: block; width: max-content; max-width: calc(100% - 16px); margin: 20px 10px 4px auto; transform: rotate(-7deg);
+  border: 3px double var(--stamp); color: var(--stamp); background: var(--card);
+  padding: 8px 14px; border-radius: 6px; text-align: center;
+  font: 700 0.95rem/1.1 var(--font-display); letter-spacing: 0.06em; text-transform: uppercase;
+  animation: thump 0.5s 0.35s ease-out both;
+}
+.stamp small { display: block; font: 500 0.6875rem/1.3 var(--font-mono); letter-spacing: 0.04em; text-transform: none; }
+@keyframes thump { from { transform: rotate(-7deg) scale(1.2); } to { transform: rotate(-7deg) scale(1); } }
+@media (prefers-reduced-motion: reduce) { .stamp { animation: none; } }
+
+/* Sections */
+section { padding-block: 64px; }
+section + section { border-top: 1px solid var(--line); }
+.sec-head { display: flex; flex-direction: column; gap: 10px; margin-bottom: 32px; max-width: 46em; }
+
+.covers { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; border-top: 1px solid var(--line); }
+.cover { padding: 22px 22px 24px 0; border-bottom: 1px solid var(--line); display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.cover:nth-child(3n+2), .cover:nth-child(3n+3) { padding-left: 22px; border-left: 1px solid var(--line); }
+.cover p { color: var(--ink-soft); }
+.cover .tag { font: 500 0.75rem/1.2 var(--font-mono); color: var(--stamp); letter-spacing: 0.04em; }
+
+.claims { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 40px; align-items: start; }
+.claims ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 14px; }
+.claims li { display: grid; grid-template-columns: 22px 1fr; gap: 10px; }
+.claims li svg { width: 22px; height: 22px; color: var(--stamp); margin-top: 2px; }
+.note { font-size: var(--step--1); color: var(--ink-soft); }
+.panel { background: var(--stamp-soft); border-radius: var(--radius); padding: 24px; display: flex; flex-direction: column; gap: 14px; }
+
+.year { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; counter-reset: step; }
+.year li { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.year .when { font: 500 0.75rem/1.2 var(--font-mono); color: var(--marigold); letter-spacing: 0.06em; text-transform: uppercase; }
+.year .bar { height: 4px; border-radius: 2px; background: var(--line); position: relative; overflow: hidden; }
+.year .bar::after { content: ""; position: absolute; inset: 0; background: var(--stamp); transform-origin: left; }
+.year li:nth-child(1) .bar::after { transform: scaleX(0.25); }
+.year li:nth-child(2) .bar::after { transform: scaleX(0.5); }
+.year li:nth-child(3) .bar::after { transform: scaleX(0.75); }
+.year p { color: var(--ink-soft); }
+
+/* Forms */
+.forms { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 28px; }
+form.card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+.field { display: flex; flex-direction: column; gap: 6px; }
+.field label { font-weight: 600; font-size: 0.9375rem; }
+.field .hint { font-size: var(--step--1); color: var(--ink-soft); }
+input[type="text"], input[type="tel"], input[type="email"], select, textarea {
+  width: 100%; min-height: 46px; padding: 10px 12px; border-radius: 8px; border: 1px solid var(--line);
+  background: var(--paper); color: var(--ink); font: 400 var(--step-0)/1.4 var(--font-body);
+}
+textarea { min-height: 96px; resize: vertical; }
+input[type="file"] { font: 400 var(--step--1)/1.4 var(--font-body); color: var(--ink-soft); width: 100%; max-width: 100%; min-height: 48px; padding: 8px; border: 1px dashed var(--line); border-radius: 8px; background: var(--paper); }
+input[type="file"]::file-selector-button { font: 600 var(--step--1)/1 var(--font-body); min-height: 32px; margin-right: 10px; padding: 0 12px; border-radius: 6px; border: 1px solid var(--line); background: var(--card); color: var(--ink); cursor: pointer; }
+.check { display: flex; gap: 10px; align-items: center; min-height: 44px; font-size: 0.9375rem; cursor: pointer; }
+.check input { width: 24px; height: 24px; margin: 0; accent-color: var(--stamp); flex: none; }
+.trap { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.result { border-radius: 8px; padding: 14px; font-size: 0.9375rem; display: flex; flex-direction: column; gap: 10px; }
+.result.ok { background: var(--stamp-soft); }
+.result.err { background: var(--marigold-soft); color: var(--ink); }
+.result .err-text { color: var(--err); font-weight: 600; }
+
+/* Visit */
+.visit { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 32px; align-items: start; }
+address { font-style: normal; font-size: var(--step-1); line-height: 1.5; }
+.landmarks { margin: 12px 0 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 8px; }
+.landmarks li { font: 500 0.8125rem/1 var(--font-mono); padding: 8px 10px; border: 1px solid var(--line); border-radius: 999px; color: var(--ink-soft); }
+.facts { display: grid; grid-template-columns: auto 1fr; gap: 10px 18px; margin: 0; }
+.facts dt { font: 500 0.8125rem/1.6 var(--font-mono); color: var(--ink-soft); text-transform: uppercase; letter-spacing: 0.06em; }
+.facts dd { margin: 0; }
+
+footer { border-top: 1px solid var(--line); }
+footer .wrap { padding-block: 28px 40px; display: flex; flex-direction: column; gap: 10px; font-size: var(--step--1); color: var(--ink-soft); }
+footer strong { color: var(--ink); }
+
+@media (max-width: 860px) {
+  .hero .wrap { grid-template-columns: minmax(0, 1fr); gap: 44px; padding-block: 36px 52px; }
+  .covers { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  .cover:nth-child(3n+2), .cover:nth-child(3n+3) { padding-left: 0; border-left: 0; }
+  .cover:nth-child(2n) { padding-left: 18px; border-left: 1px solid var(--line); }
+  .claims, .forms, .visit { grid-template-columns: minmax(0, 1fr); }
+  .year { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  section { padding-block: 48px; }
+}
+@media (max-width: 520px) {
+  .covers, .year { grid-template-columns: minmax(0, 1fr); }
+  .cover:nth-child(2n) { padding-left: 0; border-left: 0; }
+  .top nav { gap: 14px; font-size: 0.9375rem; }
+  .btn { width: 100%; }
+}
+</style>
+<style>body{margin:0}[hidden]{display:none!important}img{max-width:100%}:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top" id="top">
+      <img src="data:image/webp;base64,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" alt="Bhagwan Mahavir" width="38" height="56">
+      <span class="brand-text"><b>Ratnawat Consultancy</b><span>Insurance agency · Prabhadevi West</span></span>
+    </a>
+    <nav aria-label="Sections">
+      <a href="#cover">Insurance</a>
+      <a href="#claims">Claim help</a>
+      <a href="#quote">Get a quote</a>
+      <a href="#visit">Visit</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="hero">
+    <div class="wrap">
+      <div class="copy">
+        <p class="eyebrow">New India Assurance · LIC · Star Health · Care Health</p>
+        <h1>Your policy renewed on time. Your claim <em>followed up</em>.</h1>
+        <p class="lede">Car, home and shop insurance from New India Assurance, health cover from Star Health and Care Health, and life insurance from LIC, all looked after by one local office in Prabhadevi. We remind you before every renewal and premium date, and stay with you through every claim.</p>
+        <div class="btns">
+          <a class="btn wa-link" href="https://wa.me/919820386440" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.8-1.4.1-.2 0-.3 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.7.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.5-.2Z"/></svg>
+            WhatsApp us
+          </a>
+          <a class="btn ghost" href="#quote">Get a quote</a>
+        </div>
+        <p class="phone-line">Call <strong id="phone-text">98203 86440</strong>
+          <button class="copybtn" type="button" id="copy-phone">Copy number</button>
+          <a href="tel:+919820386440">Tap to call</a>
+        </p>
+      </div>
+
+      <figure class="schedule" aria-label="Example policy schedule showing renewal reminders">
+        <div class="head"><b>Schedule · Example</b><span>Floater Mediclaim</span></div>
+        <dl>
+          <dt>Insured</dt><dd>Your family, 4 members</dd>
+          <dt>Sum insured</dt><dd>₹10,00,000</dd>
+          <dt>Period from</dt><dd>12 Dec 2025</dd>
+          <dt>Period to</dt><dd class="due">11 Dec 2026</dd>
+          <dt>Reminders</dt><dd><div class="days"><span>30 days</span><span>15</span><span>7</span><span>1</span></div></dd>
+          <dt>Claims</dt><dd>Filed and followed up by us</dd>
+        </dl>
+        <div class="stamp" aria-hidden="true">We'll remind you<small>before every renewal</small></div>
+      </figure>
+    </div>
+  </div>
+
+  <section id="cover">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">What we insure</p>
+        <h2>Every kind of insurance, from one office in Prabhadevi</h2>
+      </div>
+      <div class="covers">
+        <div class="cover"><span class="tag">MOTOR · NEW INDIA</span><h3>Car and two-wheeler</h3><p>Comprehensive or third-party cover. Your no-claim bonus carried forward, with add-ons like zero depreciation and roadside assistance.</p></div>
+        <div class="cover"><span class="tag">HEALTH · STAR · CARE · NEW INDIA</span><h3>Health and mediclaim</h3><p>Individual, family floater and senior citizen plans from three insurers, so we can compare. Cashless treatment at network hospitals.</p></div>
+        <div class="cover"><span class="tag">LIFE · LIC</span><h3>Life insurance</h3><p>LIC plans for savings, children's education, pension and pure protection. We remind you before every premium is due so the policy never lapses.</p></div>
+        <div class="cover"><span class="tag">HOME · NEW INDIA</span><h3>Home and contents</h3><p>Householder's and home policies against fire, flood, burglary and damage to the building or what's inside.</p></div>
+        <div class="cover"><span class="tag">BUSINESS · NEW INDIA</span><h3>Shop and business</h3><p>Shopkeeper's, fire and special perils, jewellers block and workmen's compensation for local businesses.</p></div>
+        <div class="cover"><span class="tag">ACCIDENT AND TRAVEL</span><h3>Accident and travel</h3><p>Personal accident cover for death or disability, and overseas travel cover for holidays, business trips and students.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="claims">
+    <div class="wrap claims">
+      <div class="sec-head" style="margin-bottom:0">
+        <p class="eyebrow">Claim help</p>
+        <h2>A claim stuck in queries or rejected? Bring us the file.</h2>
+        <p class="lede">Health claims are where people most need someone on their side. We know the paperwork the insurer and the TPA ask for, and we follow up until there's a decision.</p>
+      </div>
+      <div class="panel">
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg><span><b>Cashless approvals</b> at network hospitals: we coordinate with the TPA desk.</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg><span><b>Reimbursement files</b> checked for missing bills, reports and discharge papers before they go in.</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg><span><b>Queries and rejections</b> reviewed against your policy wording, with a reply or appeal prepared.</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg><span><b>Motor claims</b>: intimation, surveyor visit and garage follow-up.</span></li>
+        </ul>
+        <p class="note">Claim decisions are made by the insurer. We help you present the claim properly and keep it moving.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="year">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">A year with us</p>
+        <h2>What happens after you buy</h2>
+      </div>
+      <ol class="year">
+        <li><span class="when">Day 1</span><div class="bar"></div><h3>The right cover</h3><p>We compare plans for your needs and explain what's covered and what isn't, in plain words.</p></li>
+        <li><span class="when">30 · 15 · 7 · 1 days before</span><div class="bar"></div><h3>Reminders on WhatsApp</h3><p>You hear from us well before a policy ends or a premium falls due, so there's no gap in cover, no lost no-claim bonus and no lapsed LIC policy.</p></li>
+        <li><span class="when">Renewal</span><div class="bar"></div><h3>Renewed in minutes</h3><p>We prepare the renewal with your details. You check it and pay.</p></li>
+        <li><span class="when">Any time</span><div class="bar"></div><h3>When you claim</h3><p>We file the claim, chase it and send you updates as the status changes.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="quote">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Get in touch</p>
+        <h2>Ask for a quote, a renewal or claim help</h2>
+        <p class="lede">We usually reply the same working day. You can also send your old policy or RC here so we can quote faster.</p>
+      </div>
+      <div class="forms">
+        <form class="card" id="enquiry-form" novalidate>
+          <h3>Quote or renewal</h3>
+          <div class="field"><label for="q-name">Your name</label><input id="q-name" name="name" type="text" autocomplete="name" required></div>
+          <div class="field"><label for="q-mobile">Mobile number</label><input id="q-mobile" name="mobile" type="tel" inputmode="tel" autocomplete="tel" placeholder="98XXX XXXXX" required></div>
+          <div class="field"><label for="q-interest">What do you need?</label>
+            <select id="q-interest" name="interest">
+              <option>Car or two-wheeler insurance</option>
+              <option>Health insurance</option>
+              <option>Life insurance (LIC)</option>
+              <option>Home insurance</option>
+              <option>Shop or business insurance</option>
+              <option>Personal accident cover</option>
+              <option>Travel insurance</option>
+              <option>Renewal of my policy</option>
+              <option>LIC premium payment</option>
+              <option>Help with a claim</option>
+            </select>
+          </div>
+          <div class="field"><label for="q-message">Details <span class="hint">(optional)</span></label>
+            <textarea id="q-message" name="message" placeholder="Example: Honda City 2021, current policy ends 12 Dec"></textarea></div>
+          <label class="check" for="q-wa"><input id="q-wa" name="whatsappOk" type="checkbox" checked><span>Reply to me on WhatsApp</span></label>
+          <div class="trap" aria-hidden="true"><label for="q-company">Company</label><input id="q-company" name="company" type="text" tabindex="-1" autocomplete="off"></div>
+          <button class="btn" type="submit" id="q-submit">Send request</button>
+          <div class="result" id="q-result" hidden role="status"></div>
+        </form>
+
+        <form class="card" id="docs-form" novalidate>
+          <h3>Send documents</h3>
+          <p class="note">Old policy, RC book, PAN or Aadhaar, hospital bills. PDF, JPG or PNG, up to 4 files of 4 MB each.</p>
+          <div class="field"><label for="d-name">Your name</label><input id="d-name" name="name" type="text" autocomplete="name" required></div>
+          <div class="field"><label for="d-mobile">Mobile number</label><input id="d-mobile" name="mobile" type="tel" inputmode="tel" autocomplete="tel" required></div>
+          <div class="field"><label for="d-for">These are for</label>
+            <select id="d-for" name="interest">
+              <option>Renewal</option><option>LIC premium</option><option>New policy quote</option><option>Claim</option><option>Policy change</option>
+            </select>
+          </div>
+          <div class="field"><label for="d-files">Files</label><input id="d-files" name="files" type="file" multiple accept="application/pdf,image/jpeg,image/png,image/webp,image/heic"></div>
+          <div class="trap" aria-hidden="true"><label for="d-company">Company</label><input id="d-company" name="company" type="text" tabindex="-1" autocomplete="off"></div>
+          <button class="btn ghost" type="submit" id="d-submit">Upload documents</button>
+          <div class="result" id="d-result" hidden role="status"></div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section id="visit">
+    <div class="wrap visit">
+      <div class="sec-head" style="margin-bottom:0">
+        <p class="eyebrow">Visit the office</p>
+        <address>Shop No. 4, Deepankar Society<br>S. L. Matkar Marg, Prabhadevi West<br>Parel, Mumbai 400025</address>
+        <ul class="landmarks" aria-label="Landmarks">
+          <li>Opp. Orbit Tower</li><li>Near Kumar Travels</li><li>Parel Bus Depot</li><li>Prabhadevi West signal</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <dl class="facts">
+          <dt>Hours</dt><dd>Mon to Fri, 11&nbsp;am to 10&nbsp;pm<br>Sat and Sun, 11&nbsp;am to 8&nbsp;pm</dd>
+          <dt>Phone</dt><dd>98203 86440 (calls and WhatsApp)</dd>
+          <dt>Companies</dt><dd>New India Assurance, LIC, Star Health, Care Health</dd>
+        </dl>
+        <div class="btns">
+          <a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Ratnawat+Consultancy+Prabhadevi+West+Mumbai" target="_blank" rel="noopener">Get directions</a>
+          <a class="btn ghost" id="review-link" href="https://www.google.com/search?q=Ratnawat+Consultancy+Mumbai&amp;kgmid=/g/11vpv60h15" target="_blank" rel="noopener">Google reviews</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><strong>Ratnawat Consultancy</strong>, insurance agency, Prabhadevi West, Mumbai.</p>
+    <p>Policies are issued by the insurer named on each policy: The New India Assurance Co. Ltd., Life Insurance Corporation of India, Star Health and Allied Insurance Co. Ltd. or Care Health Insurance Ltd. Premiums, cover and claim decisions are the insurer's. Please read the policy wording and sales brochure carefully before buying.</p>
+    <p id="agent-code-line" hidden></p>
+    <p>Insurance is the subject matter of solicitation.</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  // Fill these in once the agency sheet's web app is deployed (see setup checklist).
+  var CONFIG = {
+    FORM_ENDPOINT: '',          // Apps Script web app URL ending in /exec
+    WHATSAPP: '919820386440',
+    AGENT_CODE_LINE: ''         // e.g. 'Agent: <name>, IRDAI licence / NIA agency code ...'
+  };
+
+  if (CONFIG.AGENT_CODE_LINE) {
+    var ac = document.getElementById('agent-code-line');
+    ac.textContent = CONFIG.AGENT_CODE_LINE; ac.hidden = false;
+  }
+
+  var hello = 'Hello Ratnawat Consultancy, I would like help with insurance.';
+  Array.prototype.forEach.call(document.querySelectorAll('.wa-link'), function (a) {
+    a.href = 'https://wa.me/' + CONFIG.WHATSAPP + '?text=' + encodeURIComponent(hello);
+  });
+
+  document.getElementById('copy-phone').addEventListener('click', function (e) {
+    var btn = e.currentTarget, text = '+91 98203 86440';
+    function done(ok) { btn.textContent = ok ? 'Copied' : 'Select the number to copy'; setTimeout(function () { btn.textContent = 'Copy number'; }, 2200); }
+    try {
+      navigator.clipboard.writeText(text).then(function () { done(true); }, function () { selectPhone(); done(false); });
+    } catch (err) { selectPhone(); done(false); }
+  });
+  function selectPhone() {
+    var r = document.createRange(); r.selectNodeContents(document.getElementById('phone-text'));
+    var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+  }
+
+  function normalizeMobile(v) {
+    var s = String(v || '').replace(/\D/g, '');
+    if (s.length === 11 && s.charAt(0) === '0') s = s.slice(1);
+    if (s.length === 12 && s.indexOf('91') === 0) s = s.slice(2);
+    return /^[6-9]\d{9}$/.test(s) ? s : null;
+  }
+  function waLink(text) { return 'https://wa.me/' + CONFIG.WHATSAPP + '?text=' + encodeURIComponent(text); }
+  function show(box, cls, html) { box.className = 'result ' + cls; box.innerHTML = html; box.hidden = false; }
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+  function waButton(text, label) {
+    return '<a class="btn" href="' + esc(waLink(text)) + '" target="_blank" rel="noopener">' + esc(label) + '</a>';
+  }
+  function post(payload) {
+    return fetch(CONFIG.FORM_ENDPOINT, { method: 'POST', body: JSON.stringify(payload) })
+      .then(function (r) { return r.json(); });
+  }
+  var ERRORS = { name: 'Please enter your name.', mobile: 'Please enter a 10-digit mobile number.', email: 'That email address looks incomplete.',
+    too_many: 'We have already received several requests from this number. We will call you soon.',
+    file_type: 'Please upload PDF, JPG or PNG files only.', file_size: 'Each file must be under 4 MB.', files: 'Choose between 1 and 4 files.' };
+
+  // Quote / renewal form
+  var qf = document.getElementById('enquiry-form'), qr = document.getElementById('q-result'), qb = document.getElementById('q-submit');
+  qf.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var d = {
+      action: 'enquiry', name: qf.name.value.trim(), mobile: qf.mobile.value, interest: qf.interest.value,
+      message: qf.message.value.trim(), whatsappOk: qf.whatsappOk.checked, company: qf.company.value, source: 'Website'
+    };
+    var m = normalizeMobile(d.mobile);
+    if (d.name.length < 2) { show(qr, 'err', '<span class="err-text">' + ERRORS.name + '</span>'); qf.name.focus(); return; }
+    if (!m) { show(qr, 'err', '<span class="err-text">' + ERRORS.mobile + '</span>'); qf.mobile.focus(); return; }
+    var text = 'Hello, I am ' + d.name + ' (' + m + '). I need: ' + d.interest + '.' + (d.message ? ' ' + d.message : '');
+    if (!CONFIG.FORM_ENDPOINT) {
+      show(qr, 'ok', '<span>Your request is ready. Tap below to send it to us on WhatsApp.</span>' + waButton(text, 'Send on WhatsApp'));
+      return;
+    }
+    qb.disabled = true; qb.textContent = 'Sending…';
+    post(d).then(function (res) {
+      if (res.ok) {
+        qf.reset(); qf.whatsappOk.checked = true;
+        show(qr, 'ok', '<span><b>Request received.</b> We will call you on ' + esc(m) + ' soon' + (d.whatsappOk ? ' and have sent a confirmation on WhatsApp' : '') + '.</span>');
+      } else {
+        var msg = (res.errors || []).map(function (k) { return ERRORS[k]; }).filter(Boolean).join(' ') || 'Something went wrong on our side.';
+        show(qr, 'err', '<span class="err-text">' + esc(msg) + '</span><span>You can also send it on WhatsApp:</span>' + waButton(text, 'Send on WhatsApp'));
+      }
+    }).catch(function () {
+      show(qr, 'err', '<span class="err-text">The form could not reach us.</span><span>Send the same request on WhatsApp instead:</span>' + waButton(text, 'Send on WhatsApp'));
+    }).then(function () { qb.disabled = false; qb.textContent = 'Send request'; });
+  });
+
+  // Documents form
+  var df = document.getElementById('docs-form'), dr = document.getElementById('d-result'), db = document.getElementById('d-submit');
+  var MAX_FILES = 4, MAX_BYTES = 4 * 1024 * 1024;
+  var TYPES = ['application/pdf', 'image/jpeg', 'image/png', 'image/webp', 'image/heic', 'image/heif'];
+  var BY_EXT = { pdf: 'application/pdf', jpg: 'image/jpeg', jpeg: 'image/jpeg', png: 'image/png', webp: 'image/webp', heic: 'image/heic', heif: 'image/heif' };
+  function typeOf(f) { return f.type || BY_EXT[String(f.name.split('.').pop() || '').toLowerCase()] || ''; }
+  function readFile(f) {
+    return new Promise(function (resolve, reject) {
+      var r = new FileReader();
+      r.onload = function () { resolve({ name: f.name, type: typeOf(f), data: String(r.result).split(',')[1] }); };
+      r.onerror = function () { reject(r.error); };
+      r.readAsDataURL(f);
+    });
+  }
+  df.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var name = df.name.value.trim(), m = normalizeMobile(df.mobile.value), files = Array.prototype.slice.call(df.files.files);
+    if (name.length < 2) { show(dr, 'err', '<span class="err-text">' + ERRORS.name + '</span>'); df.name.focus(); return; }
+    if (!m) { show(dr, 'err', '<span class="err-text">' + ERRORS.mobile + '</span>'); df.mobile.focus(); return; }
+    var waText = 'Hello, I am ' + name + ' (' + m + '). Sending documents for: ' + df.interest.value + '.';
+    if (!CONFIG.FORM_ENDPOINT) {
+      show(dr, 'ok', '<span>Send your documents as photos or PDFs on WhatsApp. Tap below, then attach them in the chat.</span>' + waButton(waText, 'Open WhatsApp chat'));
+      return;
+    }
+    if (!files.length || files.length > MAX_FILES) { show(dr, 'err', '<span class="err-text">' + ERRORS.files + '</span>'); return; }
+    for (var i = 0; i < files.length; i++) {
+      if (TYPES.indexOf(typeOf(files[i])) < 0) { show(dr, 'err', '<span class="err-text">' + ERRORS.file_type + ' (' + esc(files[i].name) + ')</span>'); return; }
+      if (files[i].size > MAX_BYTES) { show(dr, 'err', '<span class="err-text">' + ERRORS.file_size + ' (' + esc(files[i].name) + ')</span>'); return; }
+    }
+    db.disabled = true; db.textContent = 'Uploading…';
+    Promise.all(files.map(readFile)).then(function (encoded) {
+      return post({ action: 'documents', name: name, mobile: m, interest: df.interest.value, whatsappOk: true,
+        company: df.company.value, source: 'Website', files: encoded });
+    }).then(function (res) {
+      if (res.ok) { df.reset(); show(dr, 'ok', '<span><b>' + res.count + ' file(s) received.</b> We will get back to you on ' + esc(m) + '.</span>'); }
+      else {
+        var msg = (res.errors || []).map(function (k) { return ERRORS[k]; }).filter(Boolean).join(' ') || 'The upload did not go through.';
+        show(dr, 'err', '<span class="err-text">' + esc(msg) + '</span>' + waButton(waText, 'Send on WhatsApp instead'));
+      }
+    }).catch(function () {
+      show(dr, 'err', '<span class="err-text">The upload could not reach us.</span>' + waButton(waText, 'Send on WhatsApp instead'));
+    }).then(function () { db.disabled = false; db.textContent = 'Upload documents'; });
+  });
+})();
+</script>
+</body>
+</html>
