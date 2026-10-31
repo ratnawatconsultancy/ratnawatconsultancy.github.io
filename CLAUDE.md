@@ -13,6 +13,7 @@ links to that address, so tell the owner before changing it.
   embedded base64 WebP. The favicon is inline too. Keep it a single self-contained file. The signboard and office
   photos are embedded base64 WebP too. Crop out client papers, number plates and other people's phone numbers.
 - `robots.txt` and `sitemap.xml`: for search engines. They must use the live address.
+- `google1dacfeeb73359b0b.html`: proves ownership to Google Search Console. Keep it, or the site loses verification.
 - `.nojekyll`: stops GitHub from running Jekyll. Keep it.
 - `README.md`: one-line description.
 
