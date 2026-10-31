@@ -10,8 +10,8 @@ links to that address, so tell the owner before changing it.
 ## Files
 
 - `index.html`: the whole site. CSS and JavaScript are inline; the Mahavir image in the header is an
-  embedded base64 WebP. The favicon is inline too. Keep it a single self-contained file. Office photos go in
-  the two `PHOTO` comments in the HTML, as embedded base64 WebP.
+  embedded base64 WebP. The favicon is inline too. Keep it a single self-contained file. The signboard and office
+  photos are embedded base64 WebP too. Crop out client papers, number plates and other people's phone numbers.
 - `robots.txt` and `sitemap.xml`: for search engines. They must use the live address.
 - `.nojekyll`: stops GitHub from running Jekyll. Keep it.
 - `README.md`: one-line description.
