@@ -10,20 +10,31 @@ links to that address, so tell the owner before changing it.
 ## Files
 
 - `index.html`: the whole site. CSS and JavaScript are inline; the Mahavir image in the header is an
-  embedded base64 WebP. Keep it a single self-contained file.
+  embedded base64 WebP. The favicon is inline too. Keep it a single self-contained file. Office photos go in
+  the two `PHOTO` comments in the HTML, as embedded base64 WebP.
+- `robots.txt` and `sitemap.xml`: for search engines. They must use the live address.
 - `.nojekyll`: stops GitHub from running Jekyll. Keep it.
 - `README.md`: one-line description.
+
+## English and Hindi
+
+Text in the HTML is English. Each element's Hindi is in `TEXT.hi` in the script, under the element's `data-i18n`
+key, and text set from JavaScript is in `TEXT.en` and `TEXT.hi`. Any visible text you add needs both. Keep
+`value` attributes on `<option>` in English, because the value is what reaches the agency's sheet. Test forms in
+both languages.
 
 ## Hard rules
 
 1. **No leaks.** Never commit client names, policy numbers, any phone number other than the agency's
    (98203 86440 / 919820386440), personal email addresses, links to Google Sheets, Drive or the Apps Script
-   editor, API keys or tokens. Commit with GitHub's no-reply email, never a personal one. The policy card in
-   the hero must stay clearly labelled "Example" with no real person's details.
+   editor, API keys or tokens. Commit with GitHub's no-reply email, never a personal one. Any example on the
+   page must be clearly labelled "Example" with no real person's details.
 2. **Don't change the form contract.** The forms post to `CONFIG.FORM_ENDPOINT` (a Google Apps Script web app
    that writes to the agency's private sheet). Keep that URL as it is. Requests are `POST` with a `text/plain`
    body of JSON:
    - Quote form: `{action: "enquiry", name, mobile, interest, message, whatsappOk, company, source: "Website"}`
+   - Renewal form: the same `enquiry` fields with `interest: "Renewal"`. The policy number and insurance company
+     go in `message`. Never send the insurance company as `company`: see rule 3.
    - Documents form: same fields with `action: "documents"` plus `files: [{name, type, data}]`
      (`data` is base64 with no `data:` prefix). At most 4 files of 4 MB each; PDF, JPEG, PNG, WebP, HEIC/HEIF.
    - An optional `email` field is also accepted if an email input is ever added.
@@ -34,7 +45,7 @@ links to that address, so tell the owner before changing it.
    `aria-hidden`, `tabindex="-1"`, `autocomplete="off"`) and must be sent empty. The backend silently drops any
    request where it is filled.
 4. **Only state facts the owner gave.** Agency name, address, phone, WhatsApp, insurers (New India Assurance,
-   LIC, Star Health, Care Health), "every kind of insurance", in business since 2003. Hours are Monday to Friday
+   LIC, Star Health, Care Health), "every kind of insurance", in business since 2003, serving Prabhadevi, Dadar and Worli. Hours are Monday to Friday
    11 am to 10 pm, Saturday and Sunday 11 am to 8 pm, in both the visible text and the JSON-LD
    `openingHoursSpecification`. Do not invent awards, client counts, ratings, review counts or testimonials.
 5. **Insurance advertising care.** No guarantees ("guaranteed claim", "100% settlement"), no "best" or "No. 1"
