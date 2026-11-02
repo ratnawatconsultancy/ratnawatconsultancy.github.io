@@ -348,7 +348,7 @@ footer strong { color: var(--ink); }
       </div>
       <ol class="year">
         <li><span class="when" data-i18n="y1_w">Day 1</span><span data-i18n="y1">We compare plans for your needs and explain what's covered and what isn't, in plain words.</span></li>
-        <li><span class="when" data-i18n="y2_w">30, 15, 7 and 1 days before</span><span data-i18n="y2">You get a WhatsApp reminder before a policy ends or a premium falls due, so there's no gap in cover, no lost no-claim bonus and no lapsed LIC policy.</span></li>
+        <li><span class="when" data-i18n="y2_w">Before the due date</span><span data-i18n="y2">You get a WhatsApp reminder before a policy ends or a premium falls due, so there's no gap in cover, no lost no-claim bonus and no lapsed LIC policy.</span></li>
         <li><span class="when" data-i18n="y3_w">At renewal</span><span data-i18n="y3">We prepare the renewal with your details. You check it and pay.</span></li>
         <li><span class="when" data-i18n="y4_w">When you claim</span><span data-i18n="y4">We file the claim, chase it and send you updates as the status changes.</span></li>
       </ol>
@@ -421,7 +421,7 @@ footer strong { color: var(--ink); }
       </div>
       <div class="faq">
         <details><summary data-i18n="q1">What do I need to renew my policy?</summary><p data-i18n="a1">Your old policy copy or policy number, and your mobile number. For a vehicle, keep the RC handy. Tell us if your address, vehicle or nominee has changed.</p></details>
-        <details><summary data-i18n="q2">How do renewal reminders work?</summary><p data-i18n="a2">We send a WhatsApp reminder 30, 15, 7 and 1 day before a policy ends or a premium falls due. Please tell us if your mobile number changes.</p></details>
+        <details><summary data-i18n="q2">How do renewal reminders work?</summary><p data-i18n="a2">We remind you on WhatsApp before a policy ends or a premium falls due, and again as the date comes closer. Please tell us if your mobile number changes.</p></details>
         <details><summary data-i18n="q3">What if I have missed my renewal date?</summary><p data-i18n="a3">Call us as soon as you can. What can be done depends on the type of policy and the insurer, so please don't wait.</p></details>
         <details><summary data-i18n="q4">What documents are needed for a health claim?</summary><p data-i18n="a4">Usually the claim form, policy copy or health card, hospital bills and receipts, discharge summary, doctor's prescriptions, test reports, ID proof and bank details. The insurer or TPA may ask for more.</p></details>
         <details><summary data-i18n="q5">What documents are needed for a motor claim?</summary><p data-i18n="a5">Usually the claim form, policy copy, RC, driving licence, photos of the damage and the garage estimate. A police report may be needed for theft or a serious accident. Tell us as soon as it happens.</p></details>
@@ -501,8 +501,8 @@ footer strong { color: var(--ink); }
       also_wa: 'You can also send it on WhatsApp:', same_wa: 'Send the same request on WhatsApp instead:',
       no_reach: 'The form could not reach us.', no_upload: 'The upload could not reach us.', upload_failed: 'The upload did not go through.',
       got_it: '<b>Request received.</b> We will call you on {mobile} soon.',
-      got_it_wa: '<b>Request received.</b> We will call you on {mobile} soon and have sent a confirmation on WhatsApp.',
-      got_renewal: '<b>Renewal request received.</b> We will call you on {mobile} soon and have sent a confirmation on WhatsApp.',
+      got_it_wa: '<b>Request received.</b> We will call you or reply on WhatsApp at {mobile} soon.',
+      got_renewal: '<b>Renewal request received.</b> We will call you or reply on WhatsApp at {mobile} soon.',
       got_docs: '<b>{count} file(s) received.</b> We will get back to you on {mobile}.'
     },
     hi: {
@@ -523,8 +523,8 @@ footer strong { color: var(--ink); }
       also_wa: 'आप इसे WhatsApp पर भी भेज सकते हैं:', same_wa: 'यही रिक्वेस्ट WhatsApp पर भेजें:',
       no_reach: 'फ़ॉर्म हम तक नहीं पहुँच पाया।', no_upload: 'अपलोड हम तक नहीं पहुँच पाया।', upload_failed: 'अपलोड नहीं हो पाया।',
       got_it: '<b>रिक्वेस्ट मिल गई।</b> हम जल्दी ही आपको {mobile} पर कॉल करेंगे।',
-      got_it_wa: '<b>रिक्वेस्ट मिल गई।</b> हम जल्दी ही आपको {mobile} पर कॉल करेंगे। WhatsApp पर कन्फ़र्मेशन भेज दिया है।',
-      got_renewal: '<b>रिन्यूअल की रिक्वेस्ट मिल गई।</b> हम जल्दी ही आपको {mobile} पर कॉल करेंगे। WhatsApp पर कन्फ़र्मेशन भेज दिया है।',
+      got_it_wa: '<b>रिक्वेस्ट मिल गई।</b> हम जल्दी ही आपको {mobile} पर कॉल करेंगे या WhatsApp पर जवाब देंगे।',
+      got_renewal: '<b>रिन्यूअल की रिक्वेस्ट मिल गई।</b> हम जल्दी ही आपको {mobile} पर कॉल करेंगे या WhatsApp पर जवाब देंगे।',
       got_docs: '<b>मिली फ़ाइलें: {count}।</b> हम आपसे {mobile} पर संपर्क करेंगे।',
 
       since: '2003 से प्रभादेवी की सेवा में', lang_label: 'भाषा', nav_label: 'सेक्शन', mahavir_alt: 'भगवान महावीर', sign_alt: 'प्रभादेवी वेस्ट ऑफ़िस का Ratnawat Consultancy बोर्ड',
@@ -557,7 +557,7 @@ footer strong { color: var(--ink); }
       claims_note: 'क्लेम का फ़ैसला इंश्योरेंस कंपनी करती है। हम क्लेम को सही तरीके से रखने और आगे बढ़ाने में आपकी मदद करते हैं।',
       year_h2: 'पॉलिसी लेने के बाद क्या होता है',
       y1_w: 'पहला दिन', y1: 'हम आपकी ज़रूरत के हिसाब से प्लान की तुलना करते हैं और आसान शब्दों में बताते हैं कि क्या कवर है और क्या नहीं।',
-      y2_w: '30, 15, 7 और 1 दिन पहले', y2: 'पॉलिसी खत्म होने या प्रीमियम की तारीख से पहले WhatsApp पर रिमाइंडर मिलता है, ताकि कवर न टूटे, नो-क्लेम बोनस न जाए और LIC पॉलिसी लैप्स न हो।',
+      y2_w: 'तारीख से पहले', y2: 'पॉलिसी खत्म होने या प्रीमियम की तारीख से पहले WhatsApp पर रिमाइंडर मिलता है, ताकि कवर न टूटे, नो-क्लेम बोनस न जाए और LIC पॉलिसी लैप्स न हो।',
       y3_w: 'रिन्यूअल के समय', y3: 'हम आपकी जानकारी से रिन्यूअल तैयार करते हैं। आप चेक करके पेमेंट कर दीजिए।',
       y4_w: 'क्लेम के समय', y4: 'हम क्लेम फ़ाइल करते हैं, उसका फ़ॉलो-अप करते हैं और जैसे-जैसे स्टेटस बदलता है, आपको बताते रहते हैं।',
       quote_h2: 'कोटेशन लें या क्लेम में मदद पाएँ', quote_p: 'हम आमतौर पर उसी कामकाजी दिन जवाब देते हैं। जल्दी कोटेशन के लिए अपनी पुरानी पॉलिसी या RC भी भेज सकते हैं।',
@@ -571,7 +571,7 @@ footer strong { color: var(--ink); }
       docs_for: 'ये किसके लिए हैं', f_renewal: 'रिन्यूअल', f_lic: 'LIC प्रीमियम', f_new: 'नई पॉलिसी का कोटेशन', f_claim: 'क्लेम', f_change: 'पॉलिसी में बदलाव', files: 'फ़ाइलें',
       faq_h2: 'अक्सर पूछे जाने वाले सवाल',
       q1: 'पॉलिसी रिन्यू कराने के लिए क्या चाहिए?', a1: 'पुरानी पॉलिसी की कॉपी या पॉलिसी नंबर, और आपका मोबाइल नंबर। गाड़ी की पॉलिसी के लिए RC पास में रखें। पता, गाड़ी या नॉमिनी बदला हो तो हमें बता दें।',
-      q2: 'रिन्यूअल रिमाइंडर कैसे मिलते हैं?', a2: 'पॉलिसी खत्म होने या प्रीमियम की तारीख से 30, 15, 7 और 1 दिन पहले हम WhatsApp पर रिमाइंडर भेजते हैं। मोबाइल नंबर बदले तो हमें ज़रूर बताएँ।',
+      q2: 'रिन्यूअल रिमाइंडर कैसे मिलते हैं?', a2: 'पॉलिसी खत्म होने या प्रीमियम की तारीख से पहले हम WhatsApp पर रिमाइंडर भेजते हैं, और तारीख नज़दीक आने पर फिर याद दिलाते हैं। मोबाइल नंबर बदले तो हमें ज़रूर बताएँ।',
       q3: 'रिन्यूअल की तारीख निकल गई तो क्या करें?', a3: 'जितनी जल्दी हो सके हमें कॉल करें। आगे क्या हो सकता है, यह पॉलिसी और इंश्योरेंस कंपनी पर निर्भर करता है, इसलिए देर न करें।',
       q4: 'हेल्थ क्लेम के लिए कौन से डॉक्यूमेंट चाहिए?', a4: 'आमतौर पर क्लेम फ़ॉर्म, पॉलिसी कॉपी या हेल्थ कार्ड, अस्पताल के बिल और रसीदें, डिस्चार्ज समरी, डॉक्टर के पर्चे, टेस्ट रिपोर्ट, ID प्रूफ़ और बैंक डिटेल। कंपनी या TPA और कागज़ भी माँग सकते हैं।',
       q5: 'मोटर क्लेम के लिए कौन से डॉक्यूमेंट चाहिए?', a5: 'आमतौर पर क्लेम फ़ॉर्म, पॉलिसी कॉपी, RC, ड्राइविंग लाइसेंस, नुकसान की फ़ोटो और गैराज का एस्टीमेट। चोरी या बड़े एक्सीडेंट में पुलिस रिपोर्ट की ज़रूरत पड़ सकती है। घटना होते ही हमें बताएँ।',
