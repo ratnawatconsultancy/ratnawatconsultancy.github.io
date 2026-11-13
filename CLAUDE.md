@@ -13,6 +13,9 @@ links to that address, so tell the owner before changing it.
   embedded base64 WebP. The favicon is inline too. Keep it a single self-contained file. The signboard and office
   photos are embedded base64 WebP too. Crop out client papers, number plates and other people's phone numbers.
 - `robots.txt` and `sitemap.xml`: for search engines. They must use the live address.
+- `og-image.jpg`: the 1200 × 630 card shown when the link is shared (WhatsApp, Facebook, X). `og:image` and the JSON-LD
+  `image` point to it at the live address. Remake it if the phone number or business details on it change.
+  Update `<lastmod>` in `sitemap.xml` when the page content changes.
 - `google1dacfeeb73359b0b.html`: proves ownership to Google Search Console. Keep it, or the site loses verification.
 - `.nojekyll`: stops GitHub from running Jekyll. Keep it.
 - `README.md`: one-line description.
