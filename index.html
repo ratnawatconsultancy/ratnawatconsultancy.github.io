@@ -102,6 +102,7 @@ p { margin: 0; }
   background: var(--brand); color: var(--on-brand);
 }
 .btn:hover { filter: brightness(1.12); }
+.btn:disabled { opacity: .65; cursor: progress; filter: none; }
 .btn.plain { background: transparent; color: var(--brand); }
 .btn.wa { background: var(--wa); border-color: var(--wa); color: #fff; }
 .btn svg { width: 20px; height: 20px; flex: none; }
@@ -289,6 +290,7 @@ footer strong { color: var(--ink); }
         <h2 data-i18n="renew_h2">Policy due for renewal?</h2>
         <p data-i18n="renew_p">Send these details and we will prepare the renewal. You check it and pay.</p>
       </div>
+      <noscript><p class="note">This form needs JavaScript. Please <a href="tel:+919820386440">call</a> or <a href="https://wa.me/919820386440">WhatsApp</a> 98203 86440 instead. / यह फ़ॉर्म JavaScript के बिना नहीं चलता, 98203 86440 पर <a href="tel:+919820386440">कॉल</a> या <a href="https://wa.me/919820386440">WhatsApp</a> करें।</p></noscript>
       <form id="renew-form" novalidate>
         <div class="field"><label for="r-name" data-i18n="your_name">Your name</label><input id="r-name" name="name" type="text" autocomplete="name" required></div>
         <div class="field"><label for="r-mobile" data-i18n="mobile">Mobile number</label><input id="r-mobile" name="mobile" type="tel" inputmode="tel" autocomplete="tel" placeholder="98XXX XXXXX" required></div>
@@ -368,6 +370,7 @@ footer strong { color: var(--ink); }
         <h2 data-i18n="quote_h2">Ask for a quote or claim help</h2>
         <p data-i18n="quote_p">We usually reply the same working day. You can also send your old policy or RC so we can quote faster.</p>
       </div>
+      <noscript><p class="note">These forms need JavaScript. Please <a href="tel:+919820386440">call</a> or <a href="https://wa.me/919820386440">WhatsApp</a> 98203 86440 instead. / ये फ़ॉर्म JavaScript के बिना नहीं चलते, 98203 86440 पर <a href="tel:+919820386440">कॉल</a> या <a href="https://wa.me/919820386440">WhatsApp</a> करें।</p></noscript>
       <div class="forms">
         <form class="box" id="enquiry-form" novalidate>
           <h3 data-i18n="quote_h3">Tell us what you need</h3>
@@ -400,7 +403,7 @@ footer strong { color: var(--ink); }
 
         <form class="box" id="docs-form" novalidate>
           <h3 data-i18n="docs_h3">Send documents</h3>
-          <p class="note" data-i18n="docs_note">Old policy, RC book, PAN or Aadhaar, hospital bills. PDF, JPG or PNG, up to 4 files of 4 MB each.</p>
+          <p class="note" data-i18n="docs_note">Old policy, RC book, PAN or Aadhaar, hospital bills. PDF or photos (JPG, PNG, HEIC), up to 4 files of 4 MB each.</p>
           <div class="field"><label for="d-name" data-i18n="your_name">Your name</label><input id="d-name" name="name" type="text" autocomplete="name" required></div>
           <div class="field"><label for="d-mobile" data-i18n="mobile">Mobile number</label><input id="d-mobile" name="mobile" type="tel" inputmode="tel" autocomplete="tel" required></div>
           <div class="field"><label for="d-for" data-i18n="docs_for">These are for</label>
@@ -412,7 +415,7 @@ footer strong { color: var(--ink); }
               <option value="Policy change" data-i18n="f_change">Policy change</option>
             </select>
           </div>
-          <div class="field"><label for="d-files" data-i18n="files">Files</label><input id="d-files" name="files" type="file" multiple accept="application/pdf,image/jpeg,image/png,image/webp,image/heic"></div>
+          <div class="field"><label for="d-files" data-i18n="files">Files</label><input id="d-files" name="files" type="file" multiple accept="application/pdf,image/jpeg,image/png,image/webp,image/heic,image/heif"></div>
           <div class="trap" aria-hidden="true"><label for="d-company">Company</label><input id="d-company" name="company" type="text" tabindex="-1" autocomplete="off"></div>
           <button class="btn plain" type="submit" id="d-submit" data-i18n="upload">Upload documents</button>
           <div class="result" id="d-result" hidden role="status"></div>
@@ -499,7 +502,7 @@ footer strong { color: var(--ink); }
       copied: 'Copied', copy_fail: 'Select the number to copy', copy: 'Copy number',
       err_name: 'Please enter your name.', err_mobile: 'Please enter a 10-digit mobile number.', err_email: 'That email address looks incomplete.',
       err_too_many: 'We have already received several requests from this number. We will call you soon.',
-      err_server: 'Something went wrong on our side.', err_file_type: 'Please upload PDF, JPG or PNG files only.',
+      err_server: 'Something went wrong on our side.', err_file_type: 'Please upload PDF files or photos (JPG, PNG, HEIC) only.',
       err_file_size: 'Each file must be under 4 MB.', err_files: 'Choose between 1 and 4 files.',
       sending: 'Sending…', uploading: 'Uploading…', send_request: 'Send request', renew_btn: 'Renew my policy', upload: 'Upload documents',
       send_wa: 'Send on WhatsApp', open_wa: 'Open WhatsApp chat', send_wa_instead: 'Send on WhatsApp instead',
@@ -521,7 +524,7 @@ footer strong { color: var(--ink); }
       copied: 'कॉपी हो गया', copy_fail: 'नंबर चुनकर कॉपी करें', copy: 'नंबर कॉपी करें',
       err_name: 'कृपया अपना नाम लिखें।', err_mobile: 'कृपया 10 अंकों का मोबाइल नंबर लिखें।', err_email: 'ईमेल पता अधूरा लग रहा है।',
       err_too_many: 'इस नंबर से हमें कई रिक्वेस्ट मिल चुकी हैं। हम जल्दी ही आपको कॉल करेंगे।',
-      err_server: 'हमारी तरफ से कुछ गड़बड़ हो गई।', err_file_type: 'कृपया सिर्फ PDF, JPG या PNG फ़ाइल अपलोड करें।',
+      err_server: 'हमारी तरफ से कुछ गड़बड़ हो गई।', err_file_type: 'कृपया सिर्फ PDF या फ़ोटो (JPG, PNG, HEIC) अपलोड करें।',
       err_file_size: 'हर फ़ाइल 4 MB से छोटी होनी चाहिए।', err_files: '1 से 4 फ़ाइलें चुनें।',
       sending: 'भेज रहे हैं…', uploading: 'अपलोड हो रहा है…', send_request: 'रिक्वेस्ट भेजें', renew_btn: 'मेरी पॉलिसी रिन्यू करें', upload: 'डॉक्यूमेंट अपलोड करें',
       send_wa: 'WhatsApp पर भेजें', open_wa: 'WhatsApp चैट खोलें', send_wa_instead: 'इसकी जगह WhatsApp पर भेजें',
@@ -574,7 +577,7 @@ footer strong { color: var(--ink); }
       o_renewal: 'मेरी पॉलिसी का रिन्यूअल', o_lic: 'LIC प्रीमियम भरना', o_claim: 'क्लेम में मदद',
       details: 'जानकारी', optional: '(ज़रूरी नहीं)', details_ph: 'जैसे: Honda City 2021, पॉलिसी 12 दिसंबर को खत्म हो रही है',
       wa_reply: 'मुझे WhatsApp पर जवाब दें',
-      docs_h3: 'डॉक्यूमेंट भेजें', docs_note: 'पुरानी पॉलिसी, RC बुक, PAN या आधार, अस्पताल के बिल। PDF, JPG या PNG, ज़्यादा से ज़्यादा 4 फ़ाइलें, हर फ़ाइल 4 MB तक।',
+      docs_h3: 'डॉक्यूमेंट भेजें', docs_note: 'पुरानी पॉलिसी, RC बुक, PAN या आधार, अस्पताल के बिल। PDF या फ़ोटो (JPG, PNG, HEIC), ज़्यादा से ज़्यादा 4 फ़ाइलें, हर फ़ाइल 4 MB तक।',
       docs_for: 'ये किसके लिए हैं', f_renewal: 'रिन्यूअल', f_lic: 'LIC प्रीमियम', f_new: 'नई पॉलिसी का कोटेशन', f_claim: 'क्लेम', f_change: 'पॉलिसी में बदलाव', files: 'फ़ाइलें',
       faq_h2: 'अक्सर पूछे जाने वाले सवाल',
       q1: 'पॉलिसी रिन्यू कराने के लिए क्या चाहिए?', a1: 'पुरानी पॉलिसी की कॉपी या पॉलिसी नंबर, और आपका मोबाइल नंबर। गाड़ी की पॉलिसी के लिए RC पास में रखें। पता, गाड़ी या नॉमिनी बदला हो तो हमें बता दें।',
@@ -666,22 +669,34 @@ footer strong { color: var(--ink); }
     return /^[6-9]\d{9}$/.test(s) ? s : null;
   }
   function waLink(text) { return 'https://wa.me/' + CONFIG.WHATSAPP + '?text=' + encodeURIComponent(text); }
-  function show(box, cls, render) { box.className = 'result ' + cls; box.render = render; box.innerHTML = render(); box.hidden = false; }
+  function show(box, cls, render) {
+    box.setAttribute('role', cls === 'err' ? 'alert' : 'status');
+    box.className = 'result ' + cls; box.render = render; box.innerHTML = render(); box.hidden = false;
+  }
   function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
   function errText(s) { return '<span class="err-text">' + s + '</span>'; }
   function waButton(text, labelKey) {
     return '<a class="btn wa" href="' + esc(waLink(text())) + '" target="_blank" rel="noopener">' + esc(t(labelKey)) + '</a>';
   }
   function post(payload) {
-    return fetch(CONFIG.FORM_ENDPOINT, { method: 'POST', body: JSON.stringify(payload) })
-      .then(function (r) { return r.json(); });
+    // A stalled request ends in the WhatsApp fallback instead of a button stuck on "Sending".
+    var ctrl = window.AbortController ? new AbortController() : null;
+    var timer = ctrl && setTimeout(function () { ctrl.abort(); }, payload.action === 'documents' ? 120000 : 30000);
+    return fetch(CONFIG.FORM_ENDPOINT, { method: 'POST', body: JSON.stringify(payload), signal: ctrl ? ctrl.signal : undefined })
+      .then(function (r) { return r.json(); })
+      .then(function (res) { clearTimeout(timer); return res; }, function (err) { clearTimeout(timer); throw err; });
   }
   function replyErrors(res, fallback) {
     return (res.errors || []).map(function (k) { return t('err_' + k); }).filter(Boolean).join(' ') || t(fallback);
   }
   function selectedText(sel) { return sel.options[sel.selectedIndex].text; }
+  function markInvalid(field, box, bad) {
+    if (bad) { field.setAttribute('aria-invalid', 'true'); field.setAttribute('aria-describedby', box.id); }
+    else { field.removeAttribute('aria-invalid'); field.removeAttribute('aria-describedby'); }
+  }
   function checkContact(form, box) {
     var name = form.name.value.trim(), m = normalizeMobile(form.mobile.value);
+    markInvalid(form.name, box, name.length < 2); markInvalid(form.mobile, box, name.length >= 2 && !m);
     if (name.length < 2) { show(box, 'err', function () { return errText(esc(t('err_name'))); }); form.name.focus(); return null; }
     if (!m) { show(box, 'err', function () { return errText(esc(t('err_mobile'))); }); form.mobile.focus(); return null; }
     return { name: name, mobile: m };
@@ -712,7 +727,7 @@ footer strong { color: var(--ink); }
     e.preventDefault();
     var c = checkContact(qf, qr); if (!c) return;
     var d = {
-      action: 'enquiry', name: c.name, mobile: qf.mobile.value, interest: qf.interest.value,
+      action: 'enquiry', name: c.name, mobile: c.mobile, interest: qf.interest.value,
       message: qf.message.value.trim(), whatsappOk: qf.whatsappOk.checked, company: qf.company.value, source: 'Website'
     };
     var need = selectedText(qf.interest), note = d.message;
@@ -729,7 +744,7 @@ footer strong { color: var(--ink); }
     var policy = rf.policy.value.trim(), insurer = rf.insurer.value;
     var details = 'Policy number: ' + (policy || 'not given') + '. Insurance company: ' + insurer + '.';
     var d = {
-      action: 'enquiry', name: c.name, mobile: rf.mobile.value, interest: 'Renewal',
+      action: 'enquiry', name: c.name, mobile: c.mobile, interest: 'Renewal',
       message: details, whatsappOk: true, company: rf.company.value, source: 'Website'
     };
     sendEnquiry({ form: rf, box: rr, btn: rb, btnKey: 'renew_btn', payload: d, mobile: c.mobile, okKey: 'got_renewal',
